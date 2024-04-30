@@ -263,6 +263,12 @@ const createCatalogue = async ({
     return
   }
 
+  body.sku = parseInt(body.sku as string)
+  body.price = parseFloat(body.price as string)
+  body.shipping = parseFloat(
+    body.shipping as string
+  )
+
   // create catalogue item
   const result = await db
     .collection("catalogues")
@@ -345,6 +351,12 @@ const updateCatalogue = async ({
 
     // Exclude the `_id` field from the update operation
     delete body._id
+
+    body.sku = parseInt(body.sku as string)
+    body.price = parseFloat(body.price as string)
+    body.shipping = parseFloat(
+      body.shipping as string
+    )
 
     // update catalogue item
     const result = await db

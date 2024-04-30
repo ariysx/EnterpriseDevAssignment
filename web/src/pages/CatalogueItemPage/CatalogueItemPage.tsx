@@ -14,19 +14,19 @@ export type CataloguePageMode =
   | "edit"
   | "create"
 
-  /**
-   * CatalogueItemPage component
-   * This component is used to display the form for creating, updating and deleting catalogue items
-   * Using useParams to get the id of the item to display in view or edit mode and to create a new item
-   * @param mode CataloguePageMode
-   * @returns JSX.Element
-   * @example
-   * ```tsx
-   * <CatalogueItemPage mode="view" />
-   * ```
-   * 
-   * 
-   */
+/**
+ * CatalogueItemPage component
+ * This component is used to display the form for creating, updating and deleting catalogue items
+ * Using useParams to get the id of the item to display in view or edit mode and to create a new item
+ * @param mode CataloguePageMode
+ * @returns JSX.Element
+ * @example
+ * ```tsx
+ * <CatalogueItemPage mode="view" />
+ * ```
+ *
+ *
+ */
 export const CatalogueItemPage = ({
   mode = "view",
 }: {
@@ -83,7 +83,7 @@ export const CatalogueItemPage = ({
             isLoading: false,
             autoClose: 5000,
           })
-          navigate(`/`)
+          navigate(`/catalogue/${res.data.sku}`)
         }
       })
       .catch((err) => {

@@ -94,7 +94,7 @@ app.post(
   "/catalogue",
   (req: Request, res: Response) => {
     createCatalogue({ req, res }).then((data) => {
-      res.send(data)
+      res.status(201).send(data)
     })
   }
 )

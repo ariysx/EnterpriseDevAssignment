@@ -14,7 +14,7 @@ What things you need to install the software and how to install them:
 - npm
 
 ### Environment
-Confure these on the API side in ``.env`` file
+Configure these on the API side in ``.env`` file
 
 ``PORT``: Port in which the server will run on.
 
