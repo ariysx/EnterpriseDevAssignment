@@ -8,17 +8,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them:
+Things you need:
 
 - Node.js
 - npm
+- MongoDB server
+
+## Setting up MongoDB server
+
+Create a collection called catalogues and upload the https://github.com/BestBuyAPIs/open-data-set/blob/master/products.json into the collection using MongoDB Compass
 
 ### Environment
-Configure these on the API side in ``.env`` file
 
-``PORT``: Port in which the server will run on.
+Configure these on the API side in `.env` file
 
-``MONGO_URI``: MongoDB URI
+`PORT`: Port in which the server will run on.
+
+`MONGO_URI`: MongoDB URI
 
 ### Installing
 
@@ -33,45 +39,49 @@ npm install
 ```
 
 3. Start the backend server:
+
 ```sh
 npm start
 ```
+
 4. In a new terminal, navigate to the Assignment/web directory and install the frontend dependencies:
+
 ```sh
 cd Assignment/web
 npm install
 ```
+
 5. Start the frontend development server:
+
 ```sh
 npm start
 ```
 
 6. Open http://localhost:3000 to view the application in the browser.
 
-
 ### API Routes
 
-| Method | Route                          | Description                           |
-|--------|--------------------------------|---------------------------------------|
-| GET    | ``/``                            | Base route, returns API status.       |
-| GET    | `/catalogue`                   | Retrieves all catalogues.             |
-| GET    | `/catalogue/search`            | Searches catalogues with given query. |
-| GET    | `/catalogue/filter`            | Filters catalogues based on criteria. |
-| GET    | `/catalogue/available-filters` | Gets available filters for catalogues.|
-| POST   | `/catalogue`                   | Creates a new catalogue entry.        |
-| GET    | `/catalogue/:id`               | Retrieves a specific catalogue by ID. |
-| PUT    | `/catalogue/:uuid`             | Updates a specific catalogue by UUID. |
-| DELETE | `/catalogue/:id`               | Deletes a specific catalogue by ID.   |
-| POST   | `/catalogue/bulk/export`       | Exports selected catalogues.          |
+| Method | Route                          | Description                            |
+| ------ | ------------------------------ | -------------------------------------- |
+| GET    | `/`                            | Base route, returns API status.        |
+| GET    | `/catalogue`                   | Retrieves all catalogues.              |
+| GET    | `/catalogue/search`            | Searches catalogues with given query.  |
+| GET    | `/catalogue/filter`            | Filters catalogues based on criteria.  |
+| GET    | `/catalogue/available-filters` | Gets available filters for catalogues. |
+| POST   | `/catalogue`                   | Creates a new catalogue entry.         |
+| GET    | `/catalogue/:id`               | Retrieves a specific catalogue by ID.  |
+| PUT    | `/catalogue/:uuid`             | Updates a specific catalogue by UUID.  |
+| DELETE | `/catalogue/:id`               | Deletes a specific catalogue by ID.    |
+| POST   | `/catalogue/bulk/export`       | Exports selected catalogues.           |
 
 ### Frontend Pages
 
-| Path                | Component                     | Description                           |
-|---------------------|-------------------------------|---------------------------------------|
-| `*`                 | `ErrorPage` within `NavLayout`| Fallback error page for unmatched routes. |
-| ``/``               | `HomePage` within `NavLayout` | The homepage of the web application.  |
-| `/catalogue/:id`    | `CatalogueItemPage` in `view` mode within `NavLayout` | Page to view a specific catalogue item. |
-| `/catalogue/:id/edit` | `CatalogueItemPage` in `edit` mode within `NavLayout` | Page to edit a specific catalogue item. |
-| `/catalogue/create` | `CatalogueItemPage` in `create` mode within `NavLayout` | Page to create a new catalogue item. |
+| Path                  | Component                                               | Description                               |
+| --------------------- | ------------------------------------------------------- | ----------------------------------------- |
+| `*`                   | `ErrorPage` within `NavLayout`                          | Fallback error page for unmatched routes. |
+| `/`                   | `HomePage` within `NavLayout`                           | The homepage of the web application.      |
+| `/catalogue/:id`      | `CatalogueItemPage` in `view` mode within `NavLayout`   | Page to view a specific catalogue item.   |
+| `/catalogue/:id/edit` | `CatalogueItemPage` in `edit` mode within `NavLayout`   | Page to edit a specific catalogue item.   |
+| `/catalogue/create`   | `CatalogueItemPage` in `create` mode within `NavLayout` | Page to create a new catalogue item.      |
 
 These tables summarize the API endpoints available in the backend and the routes configured in the frontend of the application
