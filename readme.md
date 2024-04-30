@@ -14,7 +14,7 @@ Things you need:
 - npm
 - MongoDB server
 
-## Setting up MongoDB server
+#### Setting up MongoDB server
 
 Create a collection called catalogues and upload the https://github.com/BestBuyAPIs/open-data-set/blob/master/products.json into the collection using MongoDB Compass
 
