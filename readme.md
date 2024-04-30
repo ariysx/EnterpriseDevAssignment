@@ -48,13 +48,6 @@ npm start
 
 6. Open http://localhost:3000 to view the application in the browser.
 
-Deciding which workspace information to collect
-
-Collecting workspace information
-
-Filtering to most relevant information
-
-Here's a table of relevant routes for the API based on the provided code excerpt from ``Assignment/api/src/index.ts``, and the pages for the frontend based on the provided code excerpt from ``Assignment/web/src/Routes.tsx``.
 
 ### API Routes
 
